@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <meta name="description" content="Starfield jQuery Plugin by Rocket Wagon Labs.">
         <meta name="author" content="Rocket Wagon Labs">
         <link rel="shortcut icon" href="img/favicon.png">
@@ -46,9 +46,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="lib/jquery-starfield.js"></script>
         <script type="application/javascript">
-            $('.container').starfield({
-                starDensity: 1.0,
-                mouseScale: 1.0
+            $(window).bind("load", function() {
+                $('.container').starfield({
+                    starDensity: 1.0,
+                    mouseScale: 1.0
+                });
             });
         </script>
         <script src="lib/rainbow-custom.min.js"></script>
