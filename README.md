@@ -1,4 +1,4 @@
-# Starfield Jquery Plugin
+# Starfield jQuery Plugin
 
 A plugin to add a bitchin' starry background to your website. See an example at http://rocketwagonlabs.com.
 
