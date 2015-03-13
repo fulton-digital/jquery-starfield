@@ -30,6 +30,7 @@ Starfield has an options argument which you can use to customize its behavior:
 This plugin is released under the MIT license. It is simple and easy to understand and places almost no restrictions on what you can do with the code.
 [More Information](http://en.wikipedia.org/wiki/MIT_License)
 
+Developed by [Luke Libraro](https://github.com/LukeL99) at [Rocket Wagon Labs](http://rocketwagonlabs.com) in Chicago, IL.
 
 ## Download
 
