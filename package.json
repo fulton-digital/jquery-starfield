@@ -1,0 +1,27 @@
+{
+  "name": "jquery-starfield",
+  "version": "1.0.0",
+  "description": "Starfield background jQuery plugin",
+  "main": "lib/jquery-starfield.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rocketwagon/jquery-starfield"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "stars",
+    "starfield"
+  ],
+  "author": "Luke Libraro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocketwagon/jquery-starfield/issues"
+  },
+  "homepage": "https://github.com/rocketwagon/jquery-starfield"
+}
