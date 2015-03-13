@@ -85,9 +85,16 @@ a:active {
 
 @media (max-width: 500px) {
 
+    .github-fork-ribbon-wrapper {
+        display: none;
+    }
+
+    .content-overlay {
+        padding-top: 15px;
+    }
+
     .content {
         display: block;
-        padding-top: 150px;
         top: 0;
         transform: translateY(0%);
     }
