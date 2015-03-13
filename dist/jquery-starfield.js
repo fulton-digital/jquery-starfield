@@ -58,22 +58,6 @@
 		}
 	};
 
-	Star.prototype.getX = function () {
-		return this.x;
-	};
-
-	Star.prototype.setX = function (x) {
-		this.x = x;
-	};
-
-	Star.prototype.getY = function () {
-		return this.y;
-	};
-
-	Star.prototype.setY = function (y) {
-		this.y = y;
-	};
-
 	var StarFactory = {
 		/**
 		 * Generates all random values to create a random star
@@ -192,16 +176,16 @@
 		// ANIMATION HANDLER
 		var recalcMovement = function () {
 			$.each(Starfield, function (key, star) {
-				var newX = star.getX() - deltaX;
-				var newY = star.getY() - deltaY;
+				var newX = star.x - deltaX;
+				var newY = star.y - deltaY;
 
 				if (newX < 0) { newX += COORDINATE_LENGTH }
 				if (newY < 0) { newY += COORDINATE_LENGTH }
 				if (newX > COORDINATE_LENGTH) {newX -= COORDINATE_LENGTH}
 				if (newY > COORDINATE_LENGTH) {newY -= COORDINATE_LENGTH}
 
-				star.setX(newX);
-				star.setY(newY);
+				star.x = newX;
+				star.y = newY;
 			});
 		};
 
