@@ -24,10 +24,12 @@
 
 ;(function ($) {
 
+	var COORDINATE_LENGTH = 5000;
+
 	//CLASSES
 	/**
 	 * The star object we're going to create
-	 * Star's coordinate system is 0 through 1000, and then mapped onto the coordinate system of our canvas
+	 * Star's coordinate system is 0 through COORDINATE_LENGTH, and then mapped onto the coordinate system of our canvas
 	 * @param  {number} x
 	 * @param  {number} y
 	 * @param  {number} size
@@ -42,14 +44,14 @@
 	};
 
 	/**
-	 * Convert from star X/Y (0-1000) to canvas X/Y
+	 * Convert from star X/Y (0-COORDINATE_LENGTH) to canvas X/Y
 	 * @param  {number} canvasWidth - the canvas width in pixels
 	 * @param  {number} canvasHeight - the canvas height in pixels
 	 * @return {Object} an object containing the coordinates on the canvas
 	 */
 	Star.prototype.mapXYToCanvasCoordinates = function (canvasWidth, canvasHeight) {
-		var canvasX = Math.round((this.x / 1000) * canvasWidth);
-		var canvasY = Math.round((this.y / 1000) * canvasHeight);
+		var canvasX = Math.round((this.x / COORDINATE_LENGTH) * canvasWidth);
+		var canvasY = Math.round((this.y / COORDINATE_LENGTH) * canvasHeight);
 		return {
 			x: canvasX,
 			y: canvasY
@@ -78,8 +80,8 @@
 		 * @return {Star} a star with random X/Y, size and color
 		 */
 		getRandomStar: function () {
-			var x = Math.floor(Math.random() * 1001);
-			var y = Math.floor(Math.random() * 1001);
+			var x = Math.floor(Math.random() * (COORDINATE_LENGTH + 1));
+			var y = Math.floor(Math.random() * (COORDINATE_LENGTH + 1));
 			var size = this._getWeightedRandomSize();
 			var color = this._getWeightedRandomColor();
 			var tintedColor = this._applyRandomShade(color);
@@ -171,21 +173,16 @@
 		var numStars = Math.floor(totalPixels * starRatio);
 
 		if(settings.seedMovement){
-			var deltaX = 1;
-			var deltaY = 1;
+			var deltaX = 5;
+			var deltaY = 5;
 		} else {
 			var deltaX = 0;
 			var deltaY = 0;
 		}
 
 		var canvas = $('<canvas id="rocketwagon-canvas">')
-			.css('position', 'absolute')
-			.css('left', '0')
-			.css('top', '0')
-			.css('height', '100%')
-			.css('width', '100%')
-			.attr('width', $this.width())
-			.attr('height', $this.height())
+			.css({position: 'absolute', left: 0, top: 0, width: '100%', height: '100%'})
+			.attr({width: $this.width(), height: $this.height()})
 			.prependTo($this);
 
 		for (var i = 0; i < numStars; i++) {
@@ -198,10 +195,10 @@
 				var newX = star.getX() - deltaX;
 				var newY = star.getY() - deltaY;
 
-				if (newX < 0) { newX += 1000 }
-				if (newY < 0) { newY += 1000 }
-				if (newX > 1000) {newX -= 1000}
-				if (newY > 1000) {newY -= 1000}
+				if (newX < 0) { newX += COORDINATE_LENGTH }
+				if (newY < 0) { newY += COORDINATE_LENGTH }
+				if (newX > COORDINATE_LENGTH) {newX -= COORDINATE_LENGTH}
+				if (newY > COORDINATE_LENGTH) {newY -= COORDINATE_LENGTH}
 
 				star.setX(newX);
 				star.setY(newY);
@@ -248,8 +245,8 @@
 				var distanceX = ((e.pageX - offset.left) - centerX);
 				var distanceY = ((e.pageY - offset.top) - centerY);
 
-				deltaX = Math.round((settings.mouseScale * distanceX) / 200);
-				deltaY = Math.round((settings.mouseScale * distanceY) / 200);
+				deltaX = Math.round(settings.mouseScale * (distanceX / 40));
+				deltaY = Math.round(settings.mouseScale * (distanceY / 40));
 			}
 		);
 
