@@ -240,8 +240,6 @@
 			draw();
 		})();
 
-		setInterval(recalcMovement, 1000 / 60);
-
 		return this;
 	};
 
