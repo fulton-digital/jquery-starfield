@@ -1,6 +1,6 @@
 # Starfield jQuery Plugin
 
-A plugin to add a bitchin' starry background to your website. See an example at http://rocketwagonlabs.com.
+A plugin to add a bitchin' starry background to your website. See an example at http://rocketwagon.github.io/jquery-starfield/.
 
 ## Documentation
 
@@ -30,9 +30,9 @@ Starfield has an options argument which you can use to customize its behavior:
 This plugin is released under the MIT license. It is simple and easy to understand and places almost no restrictions on what you can do with the code.
 [More Information](http://en.wikipedia.org/wiki/MIT_License)
 
-Developed by [Luke Libraro](https://github.com/LukeL99) at [Rocket Wagon Labs](http://rocketwagonlabs.com) in Chicago, IL.
+Developed by [Luke Libraro](https://github.com/LukeL99) at [Rocket Wagon](http://rw.co) in Chicago, IL.
 
 ## Download
 
 Releases are available for download from
-[GitHub](https://github.com/popad/jquery-starfield).
+[GitHub](https://github.com/rocketwagon/jquery-starfield).
